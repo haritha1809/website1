@@ -1,163 +1,64 @@
 import React, { useState } from 'react';
-import './Contact.css';
+import './Contact.css'; // Make sure this file exists
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
+  const [form, setForm] = useState({
     name: '',
-    email: '',
-    phone: '',
     age: '',
-    plan: '',
-    message: ''
+    profession: '',
+    contact: '',
+    alt: '',
   });
 
-  const validateForm = () => {
-    let errorMessages = [];
-
-    if (!formData.name.trim()) errorMessages.push('Name is required.');
-    if (!formData.email.trim()) {
-      errorMessages.push('Email is required.');
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      errorMessages.push('Email is invalid.');
-    }
-    if (!formData.phone.trim()) {
-      errorMessages.push('Phone number is required.');
-    } else if (!/^\d{10}$/.test(formData.phone)) {
-      errorMessages.push('Phone number must be 10 digits.');
-    }
-    if (!formData.age.trim()) {
-      errorMessages.push('Age is required.');
-    } else if (isNaN(formData.age) || formData.age <= 0) {
-      errorMessages.push('Age must be a positive number.');
-    }
-    if (!formData.plan.trim()) errorMessages.push('Plan is required.');
-    if (!formData.message.trim()) errorMessages.push('Message is required.');
-
-    if (errorMessages.length > 0) {
-      alert(errorMessages.join('\n')); // Display all errors in a single alert dialog
-      return false;
-    }
-
-    return true;
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.id]: e.target.value });
   };
 
-  const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.id]: e.target.value
-    });
-  };
+  const handleWhatsApp = () => {
+    const message = `*New Contact Submission*\n
+*Name:* ${form.name}\n
+*Age:* ${form.age}\n
+*Profession:* ${form.profession}\n
+*Contact Number:* ${form.contact}\n
+*Alternative Number:* ${form.alt}`;
 
-  const whatsapp = () => {
-    if (!validateForm()) return;
+    const phoneNumber = ''; // Add your WhatsApp number later (e.g., '919876543210')
+    const encodedMessage = encodeURIComponent(message);
+    const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
-    const { name, email, phone, age, plan, message } = formData;
-
-    const url =
-      `https://wa.me/+918766539293?text=` +
-      `*Name :* ${name}%0a` +
-      `*Email :* ${email}%0a` +
-      `*Contact No :* ${phone}%0a` +
-      `*Age :* ${age}%0a` +
-      `*Plan :* ${plan}%0a` +
-      `*Message :* ${message}`;
-
-    window.open(url, '_blank').focus();
+    window.open(url, '_blank');
   };
 
   return (
-    <div className="container" id="contact">
-      <div className="screen">
-        <div className="screen-header">
-          <div className="screen-header-left">
-            <div className="screen-header-button close"></div>
-            <div className="screen-header-button maximize"></div>
-            <div className="screen-header-button minimize"></div>
-          </div>
-          <div className="screen-header-right">
-            <div className="screen-header-ellipsis"></div>
-            <div className="screen-header-ellipsis"></div>
-            <div className="screen-header-ellipsis"></div>
-          </div>
-        </div>
-        <div className="screen-body">
-          <div className="screen-body-item left">
-            <div className="app-title">
-              <span>CONTACT</span>
-              <span>US</span>
-            </div>
-            <div className="app-contact">CONTACT INFO : +62 81 314 928 595</div>
-          </div>
-          <div className="screen-body-item">
-            <div className="app-form">
-              <div className="app-form-group">
-                <input
-                  className="app-form-control"
-                  autoComplete="true"
-                  placeholder="NAME"
-                  id="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div className="app-form-group">
-                <input
-                  className="app-form-control"
-                  autoComplete="on"
-                  placeholder="EMAIL"
-                  id="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div className="app-form-group">
-                <input
-                  className="app-form-control"
-                  placeholder="CONTACT NO"
-                  id="phone"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div className="app-form-group">
-                <input
-                  className="app-form-control"
-                  placeholder="Age"
-                  id="age"
-                  value={formData.age}
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div className="app-form-group">
-                <input
-                  className="app-form-control"
-                  placeholder="Plan"
-                  id="plan"
-                  value={formData.plan}
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div className="app-form-group message">
-                <input
-                  className="app-form-control"
-                  placeholder="MESSAGE"
-                  id="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div className="app-form-group buttons">
-                <button className="app-form-button" data-bs-dismiss="modal">
-                  CANCEL
-                </button>
-                <button className="app-form-button" onClick={whatsapp}>
-                  SEND
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div className="contact-box">
+      <h2>CONTACT US</h2>
+      <div className="form-group">
+        <label htmlFor="name">Full Name:</label>
+        <input type="text" id="name" placeholder="ENTER YOUR NAME" onChange={handleChange} />
       </div>
+      <div className="form-group">
+        <label htmlFor="age">Age:</label>
+        <input type="number" id="age" placeholder="ENTER YOUR AGE" onChange={handleChange} />
+      </div>
+      <div className="form-group">
+        <label htmlFor="profession">Profession:</label>
+        <select id="profession" onChange={handleChange}>
+          <option value="">SELECT PROFESSION</option>
+          <option value="Student">Student</option>
+          <option value="Employee">Employee</option>
+          <option value="Self-Employed">Self-Employed</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div className="form-group">
+        <label htmlFor="contact">Contact Number:</label>
+        <input type="tel" id="contact" placeholder="ENTER YOUR CONTACT NUMBER" onChange={handleChange} />
+      </div>
+      <div className="form-group">
+        <label htmlFor="alt">Alternative Number:</label>
+        <input type="tel" id="alt" placeholder="ENTER YOUR ALTERNATIVE NUMBER" onChange={handleChange} />
+      </div>
+      <button id="sendBtn" onClick={handleWhatsApp}>Send via WhatsApp</button>
     </div>
   );
 };
