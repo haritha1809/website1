@@ -2,10 +2,22 @@
     display: flex;
     justify-content: space-between;
 }
-
+.logo-container {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: none;     /* allow natural size */
+  max-height: none;    /* allow natural height */
+  overflow: visible;   /* don't crop image */
+}
 .logo{
-    width: 10rem;
-    height: 3rem;
+    width: 8rem;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(255, 102,0,0.7));
 }
 
 .header-menu{
