@@ -5,7 +5,6 @@ import hero_back from "../../assets/hero_image_back.png"
 import heart from "../../assets/heart.png"
 import calories from "../../assets/calories.png"
 import { motion } from "framer-motion"
-import NumberCounter from "number-counter";
 import Header from '../Header/Header'
 import { Link } from "react-scroll";
 
@@ -30,39 +29,17 @@ const Hero = () => {
         {/* Hero text */}
         <div className="hero-text">
           <div>
-            <span className="stroke-text">Shape </span>
-            <span>Your</span>
+            <span className="stroke-text">Run </span>
+            <span>Together</span>
           </div>
           <div>
-            <span>Ideal body</span>
+            <span>Grow Together</span>
           </div>
           <div>
             <span>
               In here we will help you to shape and build your ideal body and
               live up your life to fullest
             </span>
-          </div>
-        </div>
-
-        {/* experience figures */}
-        <div className="figures">
-          <div>
-            <span>
-              <NumberCounter end={140} start={100} delay={4} preFix="+" />
-            </span>
-            <span>expert coaches</span>
-          </div>
-          <div>
-            <span>
-              <NumberCounter end={978} start={878} delay={4} preFix="+" />
-            </span>
-            <span>Members joined</span>
-          </div>
-          <div>
-            <span>
-              <NumberCounter end={50} delay={2} preFix="+" />
-            </span>
-            <span>fitness programs</span>
           </div>
         </div>
 
@@ -75,13 +52,13 @@ const Hero = () => {
 
       {/* Right Side */}
       <div className="right-h">
-      <Link className="btn"
+        <Link className="btn"
               to="contact"
               spy={true}
               smooth={true}
-            >
-              Join now
-            </Link>
+        >
+          Join now
+        </Link>
 
         {/* heart rate */}
         <motion.div
@@ -98,7 +75,7 @@ const Hero = () => {
         {/* hero images */}
         <img className="hero-img" src={hero_image} alt="" />
         <motion.img
-            initial={{right: mobile? "11rem": '11rem' }}
+          initial={{right: mobile? "11rem": '11rem' }}
           whileInView={{ right: "20rem" }}
           transition={transition}
           className="hero-back"
