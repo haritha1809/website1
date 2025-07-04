@@ -1,19 +1,24 @@
-.Programs {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 0 2rem;
-  }
-  .programs-header {
-    display: flex;
-    gap: 5rem;
-    font-weight: bold;
-    font-size: 3rem;
-    justify-content: center;
-    color: white;
-    text-transform: uppercase;
-    font-style: italic;
-  }
+.programs-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* allows wrap if screen is small */
+  gap: 8px;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.stroke-text {
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+}
+
+.highlight-text {
+  color: white;
+  font-weight: 700;
+}
+
   
   .programs-categories {
     display: flex;
@@ -37,7 +42,7 @@
   }
   .category > :nth-child(2) {
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: bold
   }
   .category > :nth-child(3) {
     font-size: 0.9rem;
