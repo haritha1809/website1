@@ -24,7 +24,7 @@ const Hero = () => {
             whileInView={{ left: "8px" }}
             transition={{ ...transition, type: "tween" }}
           ></motion.div>
-          <span>THE BEST FITNESS CLUB IN THE TOWN</span>
+          <span>THE BEST RUNNING CLUB IN THE TOWN</span>
         </div>
         {/* Hero text */}
         <div className="hero-text">
@@ -34,12 +34,6 @@ const Hero = () => {
           </div>
           <div>
             <span>Grow Together</span>
-          </div>
-          <div>
-            <span>
-              In here we will help you to shape and build your ideal body and
-              live up your life to fullest
-            </span>
           </div>
         </div>
 
