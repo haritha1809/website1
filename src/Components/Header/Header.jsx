@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "../../assets/rndlogo.png";
+import Logo from "../../assets/redlogo.png";
 import "./Header.css";
 import { Link } from "react-scroll";
 import Bars from "../../assets/bars.png";
