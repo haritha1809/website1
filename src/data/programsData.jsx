@@ -1,5 +1,5 @@
 export const programsData = [
-  {
+  { 
     heading: "Group Runs",
     details:
       "Join our weekly community runs. Find your pace, connect with people, and stay consistent with your fitness goals.",
