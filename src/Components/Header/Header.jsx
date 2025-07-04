@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "../../assets/rndlogo.png";
+import Logo from "../../assets/redlogo.png";
 import "./Header.css";
 import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router-dom"; // for page routing

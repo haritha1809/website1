@@ -15,8 +15,8 @@
   overflow: visible;   /* don't crop image */
 }
 .logo{
-    width: 8rem;
-    height: auto;
+    width: auto;
+    height: 6rem;
 }
 
 .header-menu{
