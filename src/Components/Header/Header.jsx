@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Logo from "../../assets/rndlogo.png";
 import "./Header.css";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+import { Link } from "react-router-dom"; // for page routing
 import Bars from "../../assets/bars.png";
 
 const Header = () => {
@@ -30,54 +31,52 @@ const Header = () => {
       ) : (
         <ul className="header-menu">
           <li>
-            <Link
+            <ScrollLink
               onClick={() => setMenuOpened(false)}
               to="home"
               spy={true}
               smooth={true}
             >
               Home page
-            </Link>
+            </ScrollLink>
           </li>
           <li>
             <Link
               onClick={() => setMenuOpened(false)}
-              to="about"
-              spy={true}
-              smooth={true}
+              to="/about"
             >
               About us
             </Link>
           </li>
           <li>
-            <Link
+            <ScrollLink
               onClick={() => setMenuOpened(false)}
               to="events"
               spy={true}
               smooth={true}
             >
               Events
-            </Link>
+            </ScrollLink>
           </li>
           <li>
-            <Link
+            <ScrollLink
               onClick={() => setMenuOpened(false)}
               to="membership"
               spy={true}
               smooth={true}
             >
               Membership
-            </Link>
+            </ScrollLink>
           </li>
           <li>
-            <Link
+            <ScrollLink
               onClick={() => setMenuOpened(false)}
               to="contact"
               spy={true}
               smooth={true}
             >
               Contact
-            </Link>
+            </ScrollLink>
           </li>
         </ul>
       )}
