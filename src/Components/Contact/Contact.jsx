@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import './Contact.css'; // Make sure this file exists
+import React, { useState } from "react";
+import "./Contact.css"; // Make sure this file exists
 
 const Contact = () => {
   const [form, setForm] = useState({
-    name: '',
-    age: '',
-    profession: '',
-    contact: '',
-    alt: '',
+    name: "",
+    age: "",
+    profession: "",
+    contact: "",
+    alt: "",
   });
 
   const handleChange = (e) => {
@@ -22,11 +22,11 @@ const Contact = () => {
 *Contact Number:* ${form.contact}\n
 *Alternative Number:* ${form.alt}`;
 
-    const phoneNumber = ''; // Add your WhatsApp number later (e.g., '919876543210')
+    const phoneNumber = ""; // Add your WhatsApp number later (e.g., '919876543210')
     const encodedMessage = encodeURIComponent(message);
     const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
-    window.open(url, '_blank');
+    window.open(url, "_blank");
   };
 
   return (
@@ -34,11 +34,21 @@ const Contact = () => {
       <h2>CONTACT US</h2>
       <div className="form-group">
         <label htmlFor="name">Full Name:</label>
-        <input type="text" id="name" placeholder="ENTER YOUR NAME" onChange={handleChange} />
+        <input
+          type="text"
+          id="name"
+          placeholder="ENTER YOUR NAME"
+          onChange={handleChange}
+        />
       </div>
       <div className="form-group">
         <label htmlFor="age">Age:</label>
-        <input type="number" id="age" placeholder="ENTER YOUR AGE" onChange={handleChange} />
+        <input
+          type="number"
+          id="age"
+          placeholder="ENTER YOUR AGE"
+          onChange={handleChange}
+        />
       </div>
       <div className="form-group">
         <label htmlFor="profession">Profession:</label>
@@ -52,13 +62,25 @@ const Contact = () => {
       </div>
       <div className="form-group">
         <label htmlFor="contact">Contact Number:</label>
-        <input type="tel" id="contact" placeholder="ENTER YOUR CONTACT NUMBER" onChange={handleChange} />
+        <input
+          type="tel"
+          id="contact"
+          placeholder="ENTER YOUR CONTACT NUMBER"
+          onChange={handleChange}
+        />
       </div>
       <div className="form-group">
         <label htmlFor="alt">Alternative Number:</label>
-        <input type="tel" id="alt" placeholder="ENTER YOUR ALTERNATIVE NUMBER" onChange={handleChange} />
+        <input
+          type="tel"
+          id="alt"
+          placeholder="ENTER YOUR ALTERNATIVE NUMBER"
+          onChange={handleChange}
+        />
       </div>
-      <button id="sendBtn" onClick={handleWhatsApp}>Send via WhatsApp</button>
+      <button id="sendBtn" onClick={handleWhatsApp}>
+        Send via WhatsApp
+      </button>
     </div>
   );
 };

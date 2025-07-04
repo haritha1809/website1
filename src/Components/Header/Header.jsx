@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "../../assets/logo.png";
+import Logo from "../../assets/rndlogo.png";
 import "./Header.css";
 import { Link } from "react-scroll";
 import Bars from "../../assets/bars.png";
@@ -9,10 +9,16 @@ const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
   return (
     <div className="header" id="header">
-      <img src={Logo} alt="" className="logo" />
-      {(menuOpened===false && mobile===true)? (
+      <div className="logo-container">
+        <img src={Logo} className="logo" alt="logo" />
+      </div>
+      {menuOpened === false && mobile === true ? (
         <div
-          style={{ backgroundColor: "var(--appColor)", padding: "0.5rem", borderRadius: "5px" }}
+          style={{
+            backgroundColor: "var(--appColor)",
+            padding: "0.5rem",
+            borderRadius: "5px",
+          }}
           onClick={() => setMenuOpened(true)}
         >
           <img
