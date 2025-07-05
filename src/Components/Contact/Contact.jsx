@@ -31,7 +31,7 @@ const Contact = () => {
 
   return (
     <div className="contact-box">
-      <h2>CONTACT US</h2>
+      <h2>REGISTER NOW</h2>
       <div className="form-group">
         <label htmlFor="name">Full Name:</label>
         <input
@@ -79,7 +79,7 @@ const Contact = () => {
         />
       </div>
       <button id="sendBtn" onClick={handleWhatsApp}>
-        Send via WhatsApp
+        SUMBIT
       </button>
     </div>
   );

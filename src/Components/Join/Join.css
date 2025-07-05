@@ -23,25 +23,7 @@
     display: flex;
     gap: 1rem;
 }
-.right-j{
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
 
-.email-container{
-    display: flex;
-    gap: 3rem;
-    background-color: gray;
-    padding: 1rem 2rem;
-    border-radius: 10px;
-}
-.email-container>input{
-    background-color: transparent;
-    border: none;
-    outline: none;
-    color: var(--lightgray)
-}
 ::placeholder{
     color: var(--lightgray)
 }
